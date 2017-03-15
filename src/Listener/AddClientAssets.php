@@ -23,7 +23,7 @@ class AddClientAssets
     {
 
         //replace google fonts call , originally is <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,600">
-        $this->addHeadString('<link rel="stylesheet" href="/gfonts/gfonts.css">', 'font');
+        $event->view->addHeadString('<link rel="stylesheet" href="/gfonts/gfonts.css">', 'font');
         if($event->isForum()) {
         }
         if($event->isAdmin()) {
