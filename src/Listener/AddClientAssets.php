@@ -23,7 +23,7 @@ class AddClientAssets
     {
 
         //replace google fonts call
-        foreach ($this->view->head as $k => $v) {
+        foreach ($event->view->head as $k => $v) {
             if ($v == '<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,600">') {
                 $this->view->head[$k] = '<link rel="stylesheet" href="/gfonts/gfonts.css">'; // change to local cache
 
