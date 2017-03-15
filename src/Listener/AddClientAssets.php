@@ -22,18 +22,10 @@ class AddClientAssets
     public function addAssets(ConfigureClientView $event)
     {
 
-        //replace google fonts call
-        foreach ($event->view->head as $k => $v) {
-            if ($v == '<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,600">') {
-                $this->view->head[$k] = '<link rel="stylesheet" href="/gfonts/gfonts.css">'; // change to local cache
-
-                error_log("k => " . $k . "v=> ". $v);
-            }
-        }
-
+        //replace google fonts call , originally is <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,600">
+        $this->addHeadString('<link rel="stylesheet" href="/gfonts/gfonts.css">', 'font');
         if($event->isForum()) {
         }
-
         if($event->isAdmin()) {
         }
     }
