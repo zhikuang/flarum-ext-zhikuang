@@ -28,6 +28,9 @@ class AddClientAssets
             $event->addAssets([
                 __DIR__ . '/../../less/forum/extension.less',
             ]);
+
+            // 增加缩略图，为微信显示
+            $event->view->addFootString('<div style="width:0px;height:0px;overflow:hidden"><img src="http://on7cnqe42.bkt.clouddn.com/zhikuang_logo512.png"></div>');   
         }
         if($event->isAdmin()) {
         }
