@@ -31,7 +31,7 @@ class AddClientAssets
 
             // 增加缩略图，为微信显示
             $SCRIPT_TO_INJECT = <<<JS
-            <div style=" overflow:hidden; width:0px; height:0; margin:0 auto; position:absolute; top:-800px;"><img src="http://on7cnqe42.bkt.clouddn.com/zhikuang_logo512.png"></div>
+            <div style=" overflow:hidden; width:0px; height:0; margin:0 auto; position:absolute; top:-800px;"><img src="http://upload-images.jianshu.io/upload_images/1767483-7a6238c33f6400a1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div>
 
 JS;
             $event->view->addFootString($SCRIPT_TO_INJECT);   
