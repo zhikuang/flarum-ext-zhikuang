@@ -29,17 +29,11 @@ class AddClientAssets
                 __DIR__ . '/../../less/forum/extension.less',
             ]);
 
+            // 增加缩略图，为微信显示
             $SCRIPT_TO_INJECT = <<<JS
-            <script>
-            $(function{if(navigator.userAgent.match(/MicroMessenger/i)){        
-                var weixinShareLogo = 'http://discuss.zhikuang.org/assets/images/10-zeEKfsXzaolGJiAn.png';      
-                $('body').prepend('<div style=" overflow:hidden; width:0px; height:0; margin:0 auto; position:absolute; top:-800px;"><img src="'+weixinShareLogo +'"></div>'); 
-            };});
-            </script>
+            <div style=" overflow:hidden; width:0px; height:0; margin:0 auto; position:absolute; top:-800px;"><img src="http://on7cnqe42.bkt.clouddn.com/zhikuang_logo512.png"></div>
 
 JS;
-            // 增加缩略图，为微信显示
-            // $event->view->addFootString('<div style="width:0px;height:0px;overflow:hidden"><img src="http://on7cnqe42.bkt.clouddn.com/zhikuang_logo512.png"></div>');   
             $event->view->addFootString($SCRIPT_TO_INJECT);   
         }
         if($event->isAdmin()) {
